@@ -6,7 +6,6 @@ print('\nExpense Tracker\n')
 
 data = pd.read_csv('expenses.csv')
 
-# Functions
 def plot_expenses(data):
     if data.empty:
         print("\nNo expenses to plot.\n")
@@ -25,6 +24,9 @@ def close():
     plt.close()
     print("\nThanks for using the program. Goodbye!")
 
+import pandas as pd
+import datetime as dt
+
 def add_expense(data):
     date = dt.datetime.now().strftime('%Y-%m-%d')
     category = input('\nEnter the category: ')
@@ -35,7 +37,6 @@ def add_expense(data):
 
             if expense > 0:
                 break
-
             else:
                 print('Invalid amount. Please try again.')
 
@@ -51,7 +52,8 @@ def add_expense(data):
         'notes': notes
     }
 
-    data = data._append(new_row, ignore_index=True)
+    new_row_df = pd.DataFrame([new_row])
+    data = pd.concat([data, new_row_df], ignore_index=True)
     data.to_csv('expenses.csv', index=False)
 
     print("\nExpense added successfully.\n")
