@@ -17,7 +17,7 @@ def plot_expenses(data):
     plt.plot(x, y, marker='o')
     plt.xlabel('Expense')
     plt.ylabel('Amount')
-    plt.title('Expenses')
+    plt.title('Day Number')
     plt.show()
 
 def close():
