@@ -15,9 +15,9 @@ def plot_expenses(data):
     y = list(data['expense'])
 
     plt.plot(x, y, marker='o')
-    plt.xlabel('Expense')
+    plt.xlabel('Day Number')
     plt.ylabel('Amount')
-    plt.title('Day Number')
+    plt.title('Expense Tracker')
     plt.show()
 
 def close():
