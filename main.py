@@ -24,9 +24,6 @@ def close():
     plt.close()
     print("\nThanks for using the program. Goodbye!")
 
-import pandas as pd
-import datetime as dt
-
 def add_expense(data):
     date = dt.datetime.now().strftime('%Y-%m-%d')
     category = input('\nEnter the category: ')
@@ -105,3 +102,4 @@ while True:
     else:
         close()
         break
+
